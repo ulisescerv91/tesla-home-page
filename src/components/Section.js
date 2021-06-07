@@ -16,8 +16,7 @@ export default function Section({title,description,bgImage,rightBtnText,leftBtnT
                     <LeftButton>{leftBtnText}</LeftButton>
                     {
                         rightBtnText && <RightButton>{rightBtnText}</RightButton>
-                    }
-                    
+                    }                    
                 </ButtonGroup>
                 <DownArrow src="/images/down-arrow.svg"></DownArrow>
             </Buttons>

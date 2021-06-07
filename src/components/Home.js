@@ -12,6 +12,13 @@ export default function Home() {
                 rightBtnText='Existing Inventory'
 
             />
+            <Section
+                title='Model S'
+                description='Order Online for Touchless Delivery'
+                bgImage='model-y.jpg'
+                leftBtnText='Customer Order'                
+
+            />
 
         </Container>
     )
