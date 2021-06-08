@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
+import {selectCars} from '../features/car/carSlice'
+import {useSelector} from 'react-redux'
 
 
 
@@ -9,16 +11,21 @@ export default function Header() {
 
     const [burgeStatus,setBurgerStatus]=useState(false)
 
+    //get data from redux
+    const cars = useSelector(selectCars)
+    console.log(cars)
+
     return (
         <Container>
             <a>
                 <img  src='./images/logo.svg' alt='Tesla Logo'/>
             </a>
             <Menu>
-                    <a href='#'>Model S</a>
-                    <a href='#'>Model 3</a>
-                    <a href='#'>Model X</a>
-                    <a href='#'>Model Y</a>                
+                {
+                    cars && cars.map( (car,index) =>
+                       <a href='#' key={index}>{car}</a>
+                    )
+                }              
             </Menu>
             <RightMenu>
                     <a href='#'>SHOP</a>
